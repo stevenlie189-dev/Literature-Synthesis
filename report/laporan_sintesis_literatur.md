@@ -31,43 +31,33 @@ Dokumen ini adalah proyek portofolio mandiri (*self-initiated portfolio project*
 
 # 1. EXECUTIVE SUMMARY
 
-Usaha mikro, kecil, dan menengah (UMKM) kuliner mengelola bahan baku yang cepat rusak dengan permintaan harian yang berfluktuasi, sementara sumber daya analitis mereka terbatas. Laporan ini menyintesis delapan publikasi akademik (2018–2025) untuk menjawab satu pertanyaan: bagaimana pengendalian persediaan dan peramalan permintaan dapat membantu UMKM kuliner mengurangi pemborosan bahan baku sekaligus meningkatkan efisiensi operasional?
+UMKM kuliner mengelola bahan baku yang cepat rusak dengan permintaan harian yang berfluktuasi dan sumber daya analitis yang terbatas. Laporan ini menyintesis delapan publikasi akademik (2018–2025) untuk menjawab: bagaimana pengendalian persediaan dan peramalan permintaan dapat membantu UMKM kuliner mengurangi pemborosan bahan baku sekaligus meningkatkan efisiensi operasional?
 
-Temuan utama sintesis:
-
-1. **Pengendalian persediaan terbukti bermanfaat pada tingkat kasus, tetapi bukti empiris untuk usaha mikro-kecil masih sangat tipis.** Satu-satunya studi empiris berskala kecil dalam korpus ini, studi dua toko roti Slovenia, melaporkan penghematan biaya pengadaan sekitar 15–18% melalui model *Economic Order Quantity* (EOQ) tanpa menimbulkan pembusukan bahan (Lipnik & Čepar, 2025).
-2. **Meminimalkan *food waste* tidak identik dengan memaksimalkan laba.** Model Newsvendor pada studi yang sama menunjukkan bahwa kuantitas produksi pemaksimal laba dapat melebihi permintaan yang diharapkan (Lipnik & Čepar, 2025).
-3. **Peramalan permintaan berbasis data penjualan sudah dapat dilakukan dengan akurasi yang wajar**, dan model sederhana tetap kompetitif (Schmidt et al., 2022). Namun, tidak ada studi dalam korpus ini yang menguji secara langsung dampak akurasi ramalan terhadap volume *food waste*.
-4. **Tinjauan sistematis dan naratif menempatkan praktik manajemen, termasuk manajemen pasokan, sebagai determinan *food waste* restoran**, di samping perilaku konsumen dan kebijakan publik (Fajriah et al., 2025; Santos Silva & Florêncio de Almeida, 2024). Bukti ini bersifat asosiatif, bukan kausal.
-5. **Hambatan implementasi pada UMKM** mencakup kompetensi staf, biaya investasi awal, ketiadaan pencatatan data permintaan, dan kerumitan perhitungan manual (Filimonau & De Coteau, 2019; Lipnik & Čepar, 2025).
-
-Laporan ini juga memuat literature matrix, analisis komparatif, *research gap*, kerangka konseptual berbasis bukti, terjemahan teknis berlisensi CC BY-SA 4.0 (±230 kata), glosarium 21 istilah, dan laporan verifikasi sumber.
+1. **Manfaat pengendalian persediaan terdokumentasi pada tingkat kasus, tetapi bukti untuk usaha mikro-kecil sangat tipis.** Studi dua toko roti melaporkan penghematan biaya pengadaan sekitar 15–18% melalui *Economic Order Quantity* (EOQ) tanpa pembusukan bahan (Lipnik & Čepar, 2025).
+2. **Meminimalkan *food waste* tidak identik dengan memaksimalkan laba**; kuantitas produksi pemaksimal laba dapat melebihi permintaan yang diharapkan (Lipnik & Čepar, 2025).
+3. **Peramalan penjualan restoran berakurasi wajar dapat dicapai dengan model sederhana** (Schmidt et al., 2022), tetapi tidak ada studi dalam korpus yang menguji dampak akurasi ramalan pada volume waste.
+4. **Praktik manajemen, termasuk manajemen pasokan, dilaporkan sebagai determinan waste restoran** (Fajriah et al., 2025; Santos Silva & Florêncio de Almeida, 2024). Bukti ini asosiatif, bukan kausal.
+5. **Hambatan UMKM**: kompetensi staf, biaya investasi, pencatatan data yang lemah, dan kerumitan perhitungan manual (Filimonau & De Coteau, 2019; Lipnik & Čepar, 2025).
 
 # 2. PENDAHULUAN
 
-*Food waste* di rantai pasok pangan dipandang memiliki implikasi ekonomi, lingkungan, dan etika yang besar (Lipnik & Čepar, 2025). Pada produk dengan umur simpan pendek, seperti roti, pemborosan terutama bersumber dari produksi berlebih dan persediaan yang tidak terjual (Lipnik & Čepar, 2025). Bahan baku segar bersifat *perishable*: kelebihan stok berisiko menjadi limbah, sedangkan kekurangan stok menyebabkan penjualan hilang dan, pada beberapa kasus, pembelian darurat yang lebih mahal. Keseimbangan dua risiko ini merupakan inti masalah pengendalian persediaan (Lipnik & Čepar, 2025).
+*Food waste* dipandang memiliki implikasi ekonomi, lingkungan, dan etika yang besar (Lipnik & Čepar, 2025). Pada produk berumur simpan pendek seperti roti, pemborosan terutama bersumber dari produksi berlebih dan persediaan tak terjual (Lipnik & Čepar, 2025). Kelebihan stok bahan *perishable* berisiko menjadi limbah, sedangkan kekurangan stok menyebabkan penjualan hilang; keseimbangan dua risiko ini adalah inti pengendalian persediaan (Lipnik & Čepar, 2025). Literatur model persediaan produk mudah rusak sangat luas (Chaudhary et al., 2018), dan literatur waste restoran menyoroti determinan perilaku dan manajerial (Santos Silva & Florêncio de Almeida, 2024), tetapi kedua arus ini jarang dipertemukan pada skala usaha kecil.
 
-UMKM kuliner menghadapi kendala khusus: margin tipis, pencatatan data yang tidak sistematis, dan terbatasnya akses pada perangkat peramalan. Literatur tentang model persediaan produk mudah rusak sangat luas (Chaudhary et al., 2018), sementara literatur tentang *food waste* restoran terutama menyoroti determinan perilaku dan manajerial (Santos Silva & Florêncio de Almeida, 2024). Kedua arus ini jarang dipertemukan pada skala usaha kecil.
-
-**Tujuan.** (1) Menyintesis literatur tentang pengendalian persediaan, peramalan permintaan, dan pengurangan *food waste*; (2) membandingkan temuan, metode, dan keterbatasan antarstudi; (3) mengidentifikasi *research gap* dan menyusun kerangka konseptual; (4) mendemonstrasikan terjemahan teknis dan glosarium bidang Teknik Industri.
-
-**Ruang lingkup.** Fokus pada persediaan bahan baku dan produk mudah rusak di usaha makanan skala kecil hingga menengah. Konteks Indonesia dibahas melalui relevansi, bukan melalui data primer.
+**Tujuan:** (1) menyintesis literatur pengendalian persediaan, peramalan, dan pengurangan waste; (2) membandingkan temuan, metode, dan keterbatasan; (3) mengidentifikasi *research gap* dan menyusun kerangka konseptual; (4) mendemonstrasikan terjemahan teknis dan glosarium Teknik Industri.
 
 # 3. METODOLOGI PENCARIAN LITERATUR
 
-**Sumber pencarian.** Pencarian dilakukan melalui API Crossref (sembilan kueri bibliografis), dengan pengayaan metadata dan abstrak melalui OpenAlex dan Semantic Scholar, serta halaman penerbit dan repositori institusi. Google Scholar tidak digunakan karena tidak dapat diakses secara terprogram dari lingkungan kerja.
+**Sumber.** API Crossref (sembilan kueri bibliografis), diperkaya OpenAlex, Semantic Scholar, halaman penerbit, dan repositori institusi. Google Scholar tidak digunakan karena tidak dapat diakses secara terprogram. **Kata kunci:** *food waste*, *inventory management/control*, *demand forecasting*, *perishable inventory*, *restaurant*, *small/medium enterprises*, *bakery*, *systematic review*.
 
-**Kata kunci (Inggris).** *food waste*, *inventory management/control*, *demand forecasting*, *perishable inventory*, *restaurant*, *small/medium enterprises*, *bakery*, *systematic review*.
+**Inklusi.** (a) Artikel jurnal atau prosiding ber-DOI; (b) terbit 2019–2026, dengan satu pengecualian: Chaudhary et al. (2018), disertakan sebagai tinjauan fundamental model persediaan mudah rusak; (c) relevan dengan persediaan, peramalan, *perishable*, atau waste di usaha makanan; (d) metadata cocok pada minimal dua basis data; (e) abstrak atau teks lengkap dapat dibaca.
 
-**Kriteria inklusi.** (a) Artikel jurnal atau prosiding berindeks DOI; (b) terbit 2019–2026, dengan satu pengecualian: Chaudhary et al. (2018) disertakan karena merupakan tinjauan fundamental model persediaan produk mudah rusak; (c) relevan langsung dengan persediaan, peramalan, *perishable*, atau *food waste* di usaha makanan; (d) metadata (penulis, judul, DOI, tahun) cocok antara minimal dua basis data; (e) abstrak atau teks lengkap dapat dibaca.
+**Seleksi.** Dari 64 rekaman metadata, delapan artikel dipilih. Dua artikel relevan (DOI 10.1016/j.ijhm.2021.102933 dan 10.1007/s43069-025-00541-x) **dikeluarkan** karena abstrak dan teks lengkapnya tidak dapat diverifikasi.
 
-**Seleksi.** Dari 64 rekaman metadata yang ditinjau, delapan artikel dipilih. Dua artikel yang relevan secara tematik, yaitu sebuah tinjauan sistematis strategi pengurangan *food waste* di sektor foodservice (DOI 10.1016/j.ijhm.2021.102933) dan sebuah studi peramalan ANFIS untuk restoran (DOI 10.1007/s43069-025-00541-x), **dikeluarkan** karena abstrak maupun teks lengkapnya tidak dapat diverifikasi dari lingkungan ini. Keduanya tidak dikutip.
-
-**Dasar analisis per artikel.** Teks lengkap hanya dibaca untuk Lipnik & Čepar (2025). Tujuh artikel lainnya dianalisis dari abstrak yang diverifikasi. Konsekuensinya, kolom keterbatasan dan temuan untuk tujuh artikel tersebut hanya memuat informasi yang tercantum di abstrak, dan kesimpulan tentang metodologi detailnya tidak dibuat. Kolom "Dasar Analisis" pada literature matrix menandai hal ini. Status penelaahan sejawat: artikel jurnal dianggap *peer-reviewed* berdasarkan jurnalnya; Tanizaki et al. (2019) dan Fajriah et al. (2025) adalah makalah prosiding konferensi, yang proses penelaahannya mengikuti panitia konferensi dan tidak diverifikasi terpisah.
+**Dasar analisis.** Teks lengkap hanya dibaca untuk Lipnik & Čepar (2025); tujuh artikel lain dianalisis dari abstrak terverifikasi, sehingga temuan dan keterbatasannya tidak melampaui isi abstrak (ditandai pada kolom pertama Tabel 1). Artikel jurnal dianggap *peer-reviewed* berdasarkan jurnalnya; Tanizaki et al. (2019) dan Fajriah et al. (2025) adalah makalah prosiding yang penelaahannya tidak diverifikasi terpisah.
 
 # 4. LITERATURE MATRIX
 
-Tabel 1 merangkum kedelapan studi. Versi lengkap tersedia dalam berkas `data/literature_matrix.csv` dan `data/literature_matrix.xlsx`.
+Tabel 1 merangkum kedelapan studi (versi lengkap: `data/literature_matrix.csv` dan `.xlsx`).
 
 <!-- MATRIX -->
 
@@ -75,86 +65,73 @@ Tabel 1 merangkum kedelapan studi. Versi lengkap tersedia dalam berkas `data/lit
 
 ## 5.1 Konsep dasar pengendalian persediaan
 
-Pengendalian persediaan bertujuan menyeimbangkan biaya pemesanan, biaya penyimpanan, dan risiko kehabisan stok. Model EOQ menentukan ukuran pesanan yang meminimalkan jumlah biaya pemesanan dan penyimpanan, dengan asumsi permintaan konstan dan diketahui, harga konstan, dan tidak ada kekurangan stok (Lipnik & Čepar, 2025). Model Newsvendor menangani keputusan satu periode ketika permintaan acak: kuantitas optimal ditentukan oleh rasio kritis antara biaya kekurangan dan biaya kelebihan (Lipnik & Čepar, 2025). Pada literatur perishable yang lebih luas, tinjauan terhadap 418 artikel (1990–2016) menunjukkan bahwa model terus diperkaya dengan faktor diskon harga, kekurangan stok, inflasi, dan nilai waktu uang (Chaudhary et al., 2018).
+Pengendalian persediaan menyeimbangkan biaya pemesanan, biaya penyimpanan, dan risiko kehabisan stok. EOQ menentukan ukuran pesanan yang meminimalkan jumlah biaya pemesanan dan penyimpanan dengan asumsi permintaan konstan, harga konstan, dan tanpa kekurangan stok; Newsvendor menangani keputusan satu periode ketika permintaan acak, dengan kuantitas optimal ditentukan rasio kritis antara biaya kekurangan dan kelebihan (Lipnik & Čepar, 2025). Tinjauan 418 artikel (1990–2016) menunjukkan model terus diperkaya faktor diskon harga, kekurangan stok, inflasi, dan nilai waktu uang (Chaudhary et al., 2018).
 
 ## 5.2 Peramalan permintaan dalam bisnis kuliner
 
-Dua studi peramalan restoran menggunakan data penjualan riil. Schmidt et al. (2022) membandingkan model linear, *ensemble*, dan jaringan saraf berulang (RNN) pada data sebuah restoran menengah: untuk horizon satu hari, model linear mencapai sMAPE 19,6% dan beberapa model lain berada di bawah 20%; untuk horizon satu minggu, model non-RNN lebih buruk dari 20% sedangkan RNN terbaik mencapai 19,5%. Tanizaki et al. (2019) menyatakan bahwa peramalan di toko nyata memerlukan model spesifik-toko yang memadukan data POS dengan lokasi, cuaca, dan acara. Pada dua toko roti kecil, peramalan masih berbasis tren historis, dan permintaan, ramalan, serta galat ramalan tidak dicatat secara sistematis sehingga simpangan baku permintaan tidak dapat diestimasi (Lipnik & Čepar, 2025). Lipnik dan Čepar juga mengingatkan bahwa penjualan dapat lebih rendah daripada permintaan sebenarnya ketika stok habis (*censored demand*).
+Schmidt et al. (2022) membandingkan model linear, *ensemble*, dan RNN pada data satu restoran menengah: horizon satu hari mencapai sMAPE 19,6% (model linear), dan horizon satu minggu hanya RNN yang mendekati 20% (19,5%). Tanizaki et al. (2019) menyatakan peramalan di toko nyata memerlukan model spesifik-toko yang memadukan data POS dengan lokasi, cuaca, dan acara. Pada dua toko roti kecil, peramalan masih berbasis tren historis, dan permintaan, ramalan, serta galatnya tidak dicatat sehingga simpangan baku permintaan tak dapat diestimasi; penjualan juga dapat lebih rendah daripada permintaan sebenarnya saat stok habis (Lipnik & Čepar, 2025).
 
 ## 5.3 Karakteristik persediaan bahan baku yang mudah rusak
 
-Umur simpan membatasi kebijakan pemesanan. Pada toko roti yang diteliti, EOQ menyarankan pembelian tepung, gula, dan garam dalam jumlah besar dan lebih jarang karena umur simpannya panjang, tetapi untuk ragi jumlah pembelian harus dibatasi pada 128 kg per pesanan agar tidak terjadi pembusukan (Lipnik & Čepar, 2025). Untuk produk jadi dengan umur simpan sangat pendek dan permintaan acak, penulis yang sama menggunakan Newsvendor, bukan EOQ (Lipnik & Čepar, 2025). Model multi-item masih terbatas dalam literatur (Chaudhary et al., 2018), padahal menu kuliner memakai banyak bahan mudah rusak sekaligus. Barto et al. (2024) melaporkan, dalam eksperimen numerik dengan kebijakan *base-stock* pada ritel, bahwa ritel daring yang membuang barang sebelum kedaluwarsa tetap menghasilkan *food waste* lebih sedikit untuk banyak produk; keunggulan ini dikaitkan antara lain dengan efek *pooling* permintaan dan kendali *order picking*.
+Umur simpan membatasi kebijakan pemesanan: EOQ menyarankan pembelian tepung, gula, dan garam dalam jumlah besar dan lebih jarang, tetapi ragi dibatasi 128 kg per pesanan agar tidak busuk (Lipnik & Čepar, 2025). Untuk produk jadi berumur simpan sangat pendek dengan permintaan acak, penulis yang sama memakai Newsvendor. Model multi-item masih terbatas (Chaudhary et al., 2018), padahal menu kuliner memakai banyak bahan mudah rusak sekaligus. Dalam eksperimen numerik pada ritel, ritel daring yang membuang barang sebelum kedaluwarsa tetap menghasilkan waste lebih sedikit untuk banyak produk, antara lain karena efek *pooling* permintaan (Barto et al., 2024).
 
 ## 5.4 Hubungan inventory management dengan food waste
 
-Tinjauan sistematis atas 80 artikel mengidentifikasi tiga kelompok determinan *food waste* restoran: perilaku konsumen, manajemen restoran, dan kebijakan publik (Santos Silva & Florêncio de Almeida, 2024). Tinjauan naratif tentang restoran di Asia menyebut manajemen pasokan pangan, gaya penyajian, dan perilaku pelanggan sebagai faktor berpengaruh, dengan mayoritas jenis waste yang dapat dihindari (Fajriah et al., 2025). Filimonau dan De Coteau (2019) menegaskan bahwa waste hospitality kurang diteliti dari perspektif manajemen operasi. Semua bukti ini bersifat **asosiatif**: tinjauan tersebut memetakan faktor yang dilaporkan berhubungan dengan waste, bukan mengestimasi efek kausal manajemen persediaan. Bukti paling dekat dengan hubungan sebab-akibat berasal dari model (Barto et al., 2024; Lipnik & Čepar, 2025), yaitu hubungan yang bersyarat pada asumsi model.
+Tinjauan sistematis 80 artikel mengidentifikasi tiga determinan waste restoran: perilaku konsumen, manajemen restoran, dan kebijakan publik (Santos Silva & Florêncio de Almeida, 2024). Tinjauan naratif restoran Asia menyebut manajemen pasokan, gaya penyajian, dan perilaku pelanggan sebagai faktor berpengaruh, dengan mayoritas waste dapat dihindari (Fajriah et al., 2025). Filimonau dan De Coteau (2019) menegaskan waste hospitality kurang diteliti dari perspektif manajemen operasi. Bukti ini **asosiatif**: tinjauan memetakan faktor yang dilaporkan berhubungan dengan waste, bukan mengestimasi efek kausal persediaan. Bukti paling dekat dengan sebab-akibat berasal dari model (Barto et al., 2024; Lipnik & Čepar, 2025) dan bersyarat pada asumsinya.
 
 ## 5.5 Strategi pengurangan pemborosan bahan baku
 
-Strategi yang muncul dari korpus: (1) penentuan ukuran pesanan berbasis biaya (EOQ) untuk bahan stabil dan tahan lama, serta Newsvendor untuk produk jadi mudah rusak (Lipnik & Čepar, 2025); (2) pencatatan permintaan dan galat ramalan secara sistematis (Lipnik & Čepar, 2025); (3) peramalan berbasis data penjualan (Schmidt et al., 2022; Tanizaki et al., 2019); (4) perbaikan manajemen pasokan, penyajian dengan piring lebih kecil, dan edukasi pelanggan (Fajriah et al., 2025); (5) pelatihan karyawan dan kebijakan pendukung (Santos Silva & Florêncio de Almeida, 2024). Pemanfaatan sisa produksi, misalnya menjadi pakan ternak atau remah roti, dilaporkan pada kedua toko roti sebagai penanganan surplus, bukan pencegahan (Lipnik & Čepar, 2025).
+Strategi dalam korpus: EOQ untuk bahan stabil dan Newsvendor untuk produk mudah rusak; pencatatan permintaan dan galat ramalan (Lipnik & Čepar, 2025); peramalan berbasis data penjualan (Schmidt et al., 2022; Tanizaki et al., 2019); perbaikan manajemen pasokan, piring lebih kecil, dan edukasi pelanggan (Fajriah et al., 2025); serta pelatihan karyawan dan kebijakan pendukung (Santos Silva & Florêncio de Almeida, 2024).
 
 ## 5.6 Tantangan implementasi pada UMKM
 
-Empat tantangan teridentifikasi. *Pertama*, data: pencatatan permintaan dan ramalan belum sistematis (Lipnik & Čepar, 2025), padahal model spesifik-toko membutuhkan data POS yang memadai (Tanizaki et al., 2019). *Kedua*, kompetensi dan biaya: kompetensi internal, kebutuhan pelatihan, dan investasi awal merupakan determinan kelayakan adopsi (Filimonau & De Coteau, 2019). *Ketiga*, kerumitan perhitungan: penulis studi toko roti menyatakan bahwa perhitungan EOQ dan Newsvendor secara manual dapat menyulitkan pemilik usaha kecil (Lipnik & Čepar, 2025). *Keempat*, kapasitas fisik: pemesanan tepung 10.000 kg yang direkomendasikan memerlukan perluasan gudang (Lipnik & Čepar, 2025).
+(1) *Data*: pencatatan permintaan belum sistematis (Lipnik & Čepar, 2025), padahal model spesifik-toko butuh data POS (Tanizaki et al., 2019). (2) *Kompetensi dan biaya*: kompetensi internal, pelatihan, dan investasi awal menentukan kelayakan adopsi (Filimonau & De Coteau, 2019). (3) *Kerumitan*: perhitungan manual EOQ dan Newsvendor menyulitkan pemilik usaha kecil (Lipnik & Čepar, 2025). (4) *Kapasitas fisik*: pemesanan tepung 10.000 kg yang direkomendasikan menuntut perluasan gudang (Lipnik & Čepar, 2025).
 
 ## 5.7 Analisis komparatif
 
-**Kesamaan.** Seluruh studi memperlakukan *food waste* sebagai masalah yang dapat dikelola melalui keputusan operasional. Studi model dan studi kasus sama-sama menekankan keseimbangan antara kelebihan dan kekurangan stok (Barto et al., 2024; Lipnik & Čepar, 2025), dan studi tinjauan sama-sama menempatkan faktor manajerial di antara determinan utama (Fajriah et al., 2025; Santos Silva & Florêncio de Almeida, 2024).
+**Kesamaan.** Seluruh studi memperlakukan waste sebagai masalah yang dapat dikelola lewat keputusan operasional; studi model dan kasus sama-sama menekankan keseimbangan kelebihan–kekurangan stok (Barto et al., 2024; Lipnik & Čepar, 2025), dan tinjauan menempatkan faktor manajerial di antara determinan utama (Fajriah et al., 2025; Santos Silva & Florêncio de Almeida, 2024).
 
-**Perbedaan.** (a) *Tingkat bukti*: hanya Lipnik dan Čepar (2025) yang menunjukkan nilai moneter dari perbaikan persediaan pada usaha kecil; studi lain berupa akurasi model, simulasi, atau tinjauan. (b) *Tujuan peramalan*: Schmidt et al. (2022) meramal penjualan untuk penjadwalan tenaga kerja, bukan untuk persediaan. (c) *Hubungan waste dan laba*: Lipnik dan Čepar (2025) menemukan konflik antara keduanya, sedangkan Barto et al. (2024) menunjukkan, pada konteks ritel, bahwa karakteristik sistem (misalnya *pooling*) memengaruhi besarnya waste meskipun kebijakan pembuangan lebih dini diterapkan.
+**Perbedaan.** (a) *Tingkat bukti*: hanya Lipnik dan Čepar (2025) menunjukkan nilai moneter perbaikan persediaan pada usaha kecil. (b) *Tujuan peramalan*: Schmidt et al. (2022) meramal penjualan untuk penjadwalan tenaga kerja, bukan persediaan. (c) *Waste dan laba*: Lipnik dan Čepar (2025) menemukan konflik keduanya, sedangkan Barto et al. (2024) menunjukkan, pada ritel, bahwa karakteristik sistem seperti *pooling* memengaruhi besarnya waste.
 
-**Metode yang paling sering digunakan.** Dari delapan studi: empat tinjauan (sistematis, kritis, naratif, dan tinjauan model), dua studi peramalan ML, satu studi kasus dengan model analitik, dan satu studi numerik (Tabel 2).
+**Metode terbanyak:** empat tinjauan, dua studi peramalan ML, satu studi kasus dengan model analitik, dan satu studi numerik (Tabel 2).
 
-**Tabel 2.** Perbandingan pendekatan metodologis dalam korpus
+::: {custom-style="TableCaption"}
+Tabel 2. Perbandingan pendekatan metodologis dalam korpus
+:::
 
 | Pendekatan | Studi | Kelebihan | Kelemahan |
 |:-----------|:------|:----------|:----------|
-| Tinjauan (sistematis, kritis, naratif, model) | Santos Silva & Florêncio de Almeida (2024); Filimonau & De Coteau (2019); Fajriah et al. (2025); Chaudhary et al. (2018) | Memetakan faktor dan celah secara luas | Asosiatif; tidak menghasilkan estimasi efek; sulit diterapkan langsung |
-| Peramalan ML | Schmidt et al. (2022); Tanizaki et al. (2019) | Memanfaatkan data penjualan; akurasi terukur | Butuh data dan keahlian; spesifik-toko; belum dikaitkan dengan waste |
-| Model analitik pada studi kasus (EOQ, Newsvendor) | Lipnik & Čepar (2025) | Sederhana, transparan, menghasilkan angka keputusan | Asumsi kuat (permintaan stabil); sampel sangat kecil |
-| Simulasi/numerik | Barto et al. (2024) | Mengisolasi efek kebijakan | Tidak berbasis data lapangan; konteks ritel |
+| Tinjauan | Santos Silva & Florêncio de Almeida (2024); Filimonau & De Coteau (2019); Fajriah et al. (2025); Chaudhary et al. (2018) | Memetakan faktor dan celah secara luas | Asosiatif; tanpa estimasi efek |
+| Peramalan ML | Schmidt et al. (2022); Tanizaki et al. (2019) | Memakai data penjualan; akurasi terukur | Butuh data dan keahlian; spesifik-toko; tak dikaitkan dengan waste |
+| Model analitik studi kasus | Lipnik & Čepar (2025) | Sederhana, menghasilkan angka keputusan | Asumsi kuat; sampel sangat kecil |
+| Simulasi numerik | Barto et al. (2024) | Mengisolasi efek kebijakan | Bukan data lapangan; konteks ritel |
 
-**Faktor paling berpengaruh terhadap *food waste*.** Berdasarkan tinjauan, faktor manajerial (termasuk manajemen pasokan), perilaku konsumen, dan kebijakan publik (Fajriah et al., 2025; Santos Silva & Florêncio de Almeida, 2024). Urutan kekuatan pengaruh di antara faktor-faktor ini tidak dapat ditetapkan dari abstrak yang diverifikasi.
-
-**Dapatkah hasil berskala besar diterapkan pada UMKM?** Hanya sebagian. Model ritel dan model umum (Barto et al., 2024; Chaudhary et al., 2018) memberi wawasan konseptual, tetapi mengandaikan data dan kapasitas komputasi yang umumnya belum tersedia di UMKM. Penerapan langsung pada skala kecil hanya terdokumentasi pada dua toko roti (Lipnik & Čepar, 2025), sehingga generalisasi ke UMKM kuliner Indonesia masih bersifat hipotesis.
+**Faktor paling berpengaruh.** Menurut tinjauan: faktor manajerial (termasuk manajemen pasokan), perilaku konsumen, dan kebijakan publik (Fajriah et al., 2025; Santos Silva & Florêncio de Almeida, 2024); urutan kekuatannya tak dapat ditetapkan dari abstrak. **Penerapan hasil berskala besar pada UMKM:** hanya sebagian. Model ritel dan umum (Barto et al., 2024; Chaudhary et al., 2018) memberi wawasan konseptual tetapi mengandaikan data dan kapasitas yang jarang dimiliki UMKM; penerapan langsung pada skala kecil baru terdokumentasi pada dua toko roti (Lipnik & Čepar, 2025), sehingga generalisasi ke UMKM Indonesia masih hipotesis.
 
 # 6. RESEARCH GAP
 
-**Sudah banyak diteliti.** Model persediaan produk mudah rusak (Chaudhary et al., 2018); determinan *food waste* restoran (Santos Silva & Florêncio de Almeida, 2024); akurasi model peramalan penjualan restoran (Schmidt et al., 2022; Tanizaki et al., 2019).
+**Sudah banyak diteliti:** model persediaan mudah rusak (Chaudhary et al., 2018); determinan waste restoran (Santos Silva & Florêncio de Almeida, 2024); akurasi peramalan penjualan restoran (Schmidt et al., 2022; Tanizaki et al., 2019).
 
-**Masih terbatas.**
+**Masih terbatas** (berlaku untuk delapan studi terverifikasi, bukan seluruh literatur):
 
-1. **Bukti empiris persediaan-waste pada usaha mikro-kecil.** Studi toko roti hanya mencakup dua kasus dan penulisnya sendiri menyebut bahwa literatur masih bersifat konseptual atau simulasi (Lipnik & Čepar, 2025).
-2. **Keterkaitan akurasi ramalan dengan volume waste.** Studi peramalan melaporkan galat (Schmidt et al., 2022) atau verifikasi model (Tanizaki et al., 2019), bukan dampaknya pada persediaan atau waste. Pernyataan ini terbatas pada delapan studi yang diverifikasi dan bukan klaim tentang seluruh literatur.
-3. **Model multi-item mudah rusak.** Dinyatakan terbatas oleh Chaudhary et al. (2018), padahal ini menyerupai kondisi menu kuliner.
-4. **Pencatatan data dan *censored demand*.** Tidak adanya pencatatan permintaan dan galat ramalan menghambat penerapan model (Lipnik & Čepar, 2025).
-5. **Trade-off laba–waste.** Konflik antara maksimasi laba dan minimasi waste (Lipnik & Čepar, 2025) belum dikaji lintas jenis usaha.
-6. **Konteks Indonesia.** Tidak ada studi UMKM kuliner Indonesia dalam korpus terverifikasi ini. Hal ini mencerminkan keterbatasan pencarian laporan ini, bukan bukti bahwa literatur semacam itu tidak ada.
+1. **Bukti empiris persediaan–waste pada usaha mikro-kecil**: studi toko roti hanya dua kasus, dan penulisnya menyebut literatur masih konseptual atau simulasi (Lipnik & Čepar, 2025).
+2. **Kaitan akurasi ramalan dengan volume waste**: studi peramalan melaporkan galat (Schmidt et al., 2022) atau verifikasi model (Tanizaki et al., 2019), bukan dampaknya pada waste.
+3. **Model multi-item mudah rusak** terbatas (Chaudhary et al., 2018), padahal mirip kondisi menu kuliner.
+4. **Pencatatan data dan *censored demand*** menghambat penerapan model (Lipnik & Čepar, 2025).
+5. **Trade-off laba–waste** (Lipnik & Čepar, 2025) belum dikaji lintas jenis usaha.
+6. **Konteks Indonesia**: tidak ada studi UMKM kuliner Indonesia dalam korpus ini; ini keterbatasan pencarian, bukan bukti ketiadaan literatur.
 
-**Peluang riset lanjutan.** Studi lapangan multikasus pada UMKM kuliner Indonesia yang mengukur volume waste sebelum dan sesudah penerapan EOQ/Newsvendor; uji model peramalan sederhana terhadap waste; pengembangan alat bantu berbiaya rendah yang mengotomatisasi perhitungan; dan integrasi faktor perilaku staf dengan model kuantitatif.
-
-**Relevansi bagi UMKM kuliner.** Temuan kasus toko roti menunjukkan bahwa model klasik dan murah dapat menghasilkan penghematan nyata. Celah di atas menunjukkan bahwa dukungan bukti untuk konteks kuliner Indonesia masih perlu dibangun.
+**Peluang riset:** studi multikasus pada UMKM kuliner Indonesia yang mengukur volume waste sebelum dan sesudah penerapan EOQ/Newsvendor; uji model peramalan sederhana terhadap waste; alat bantu berbiaya rendah yang mengotomatisasi perhitungan; integrasi faktor perilaku staf dengan model kuantitatif. **Relevansi:** kasus toko roti menunjukkan model klasik berbiaya rendah dapat menghemat nyata, sementara celah di atas menunjukkan dukungan bukti untuk konteks Indonesia masih perlu dibangun.
 
 # 7. KERANGKA KONSEPTUAL
 
-Gambar 1 menyajikan kerangka yang disesuaikan dengan bukti. Setiap panah adalah hubungan yang **dihipotesiskan**, dan keterangan di sampingnya menyatakan tingkat dukungan bukti dari korpus. Faktor kontekstual UMKM (umur simpan, kualitas data, kompetensi staf, biaya investasi, waktu tunggu pemasok, dan kapasitas penyimpanan) diperlakukan sebagai kondisi yang diduga memoderasi hubungan tersebut; daftar ini disusun dari temuan Filimonau dan De Coteau (2019), Lipnik dan Čepar (2025), dan Tanizaki et al. (2019), dan belum diuji sebagai moderator.
+Gambar 1 menyajikan kerangka yang disesuaikan dengan bukti. Setiap panah adalah hubungan yang **dihipotesiskan**; keterangannya menyatakan tingkat dukungan bukti. Faktor kontekstual UMKM diperlakukan sebagai kondisi yang diduga memoderasi hubungan, disusun dari Filimonau dan De Coteau (2019), Lipnik dan Čepar (2025), dan Tanizaki et al. (2019), dan belum diuji sebagai moderator.
 
-![**Gambar 1.** Kerangka konseptual hubungan antara peramalan permintaan, perencanaan persediaan, pengendalian persediaan bahan baku, pengurangan *food waste*, dan efisiensi operasional. Sumber: sintesis penulis dari literatur yang dikaji.](figures/kerangka_konseptual.png){width=5.6in}
-
-Ringkasan dukungan bukti: (1→2) didukung sebagian; (2→3) bukti kasus terbatas; (3→4) asosiatif/teoretis; (4→5) belum diuji langsung, walaupun penghematan biaya dilaporkan pada kasus tunggal (Lipnik & Čepar, 2025).
+![**Gambar 1.** Kerangka konseptual peramalan permintaan hingga efisiensi operasional. Sumber: sintesis penulis dari literatur yang dikaji.](figures/kerangka_konseptual.png){width=4.4in}
 
 # 8. TECHNICAL TRANSLATION
 
-**Label sumber:** kutipan dari artikel berlisensi terbuka (bukan teks simulasi).
-
-| | |
-|:--|:--|
-| Judul | Reducing Food Waste and Boosting Profits through Inventory Management: The Case of Small Slovenian Bakeries |
-| Penulis | Špela Lipnik dan Žiga Čepar |
-| Tahun / Jurnal | 2025; *Managing Global Transitions, 23*(3), 259–294 (bagian "EOQ Model", hlm. 267–268) |
-| DOI | https://doi.org/10.26493/1854-6935.23.259-294 |
-| Lisensi sumber | Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0). Terjemahan ini adalah adaptasi dan dilisensikan di bawah lisensi yang sama. |
-| Perubahan | Diterjemahkan ke Bahasa Indonesia; kalimat pengantar beserta sitasi internal sumber serta tiga bagian lain (butir "Each order is delivered individually", kalimat "The EOQ model typically applies to a single product or item", dan kalimat "Only the order quantity is directly under our control") dihilangkan agar sesuai panjang cuplikan; judul butir ditambahkan; daftar diformat ulang. Tidak ada perubahan makna. |
+**Sumber (kutipan artikel berlisensi terbuka, bukan teks simulasi):** Špela Lipnik dan Žiga Čepar (2025), *Reducing Food Waste and Boosting Profits through Inventory Management: The Case of Small Slovenian Bakeries*, *Managing Global Transitions, 23*(3), 259–294 (bagian "EOQ Model", hlm. 267–268). DOI: https://doi.org/10.26493/1854-6935.23.259-294. **Lisensi:** CC BY-SA 4.0; terjemahan ini adalah adaptasi dan dilisensikan dengan lisensi yang sama. **Perubahan:** diterjemahkan ke Bahasa Indonesia; kalimat pengantar beserta sitasi internal sumber serta tiga bagian lain (butir "Each order is delivered individually", kalimat "The EOQ model typically applies to a single product or item", dan kalimat "Only the order quantity is directly under our control") dihilangkan agar sesuai panjang cuplikan; judul butir ditambahkan; daftar diformat ulang. Tidak ada perubahan makna.
 
 **Teks Bahasa Inggris (kutipan, ±245 kata)**
 
@@ -184,19 +161,13 @@ Ringkasan dukungan bukti: (1→2) didukung sebagian; (2→3) bukti kasus terbata
 >
 > Siklus persediaan melibatkan tiga variabel: (i) kuantitas pesanan Q, yaitu ukuran pesanan tetap yang selalu diajukan; (ii) waktu siklus T, yaitu selang waktu antara dua pemesanan berturut-turut yang bergantung pada kuantitas pesanan; dan (iii) permintaan D, yaitu jumlah unit yang dibutuhkan dalam persediaan selama suatu periode tertentu. Kuantitas yang masuk ke persediaan selama siklus adalah Q, sedangkan kuantitas yang keluar adalah D × T. Kedua kuantitas ini harus sama karena tingkat persediaan pada awal dan akhir siklus adalah nol.
 
-### Catatan penerjemah
-
-1. *Lead time is zero* dipertahankan sebagai "bernilai nol" sesuai sumber. Sumber sendiri memuat ketidakkonsistenan: kalimat di dalam tanda kurung menyebut waktu tunggu "tetap dan diketahui". Terjemahan mempertahankan teks apa adanya dan tidak memperbaikinya.
-2. *Stockout* diterjemahkan "kehabisan stok" dan *shortage* "kekurangan persediaan" agar dua konsep tetap dapat dibedakan.
-3. *Holding cost* diterjemahkan "biaya penyimpanan" dan *order cost* "biaya pemesanan", sesuai istilah baku pada glosarium (Bagian 9). Simbol Q, T, D, dan notasi D × T dipertahankan.
-4. *Cycle time* diterjemahkan "waktu siklus", bukan "waktu daur", yang lebih jarang dipakai dalam Teknik Industri.
+**Catatan penerjemah.** (1) *Lead time is zero* dipertahankan sebagai "bernilai nol"; sumber sendiri tidak konsisten karena kalimat dalam kurung menyebut waktu tunggu "tetap dan diketahui", dan terjemahan tidak memperbaikinya. (2) *Stockout* diterjemahkan "kehabisan stok" dan *shortage* "kekurangan persediaan" agar kedua konsep tetap terbedakan. (3) *Holding cost* dan *order cost* mengikuti istilah baku glosarium (Bagian 9); simbol Q, T, D dan notasi D × T dipertahankan. (4) *Cycle time* diterjemahkan "waktu siklus", bukan "waktu daur".
 
 # 9. TECHNICAL GLOSSARY
 
 | English Term | Indonesian Equivalent | Technical Explanation |
 |:-------------|:----------------------|:----------------------|
 | Inventory Control | Pengendalian Persediaan | Aktivitas merencanakan dan mengatur jumlah serta waktu pemesanan dan penyimpanan barang agar permintaan terpenuhi dengan biaya total minimum. |
-| Inventory Management | Manajemen Persediaan | Pengelolaan menyeluruh persediaan, mencakup perencanaan, pengadaan, penyimpanan, dan pencatatan. |
 | Demand Forecasting | Peramalan Permintaan | Estimasi permintaan masa depan berdasarkan data historis dan faktor eksternal sebagai dasar perencanaan persediaan. |
 | Forecast Accuracy | Akurasi Peramalan | Tingkat kedekatan ramalan dengan permintaan aktual, diukur antara lain dengan MAPE atau sMAPE. |
 | Reorder Point | Titik Pemesanan Ulang | Tingkat persediaan yang memicu pemesanan baru, setara dengan permintaan selama waktu tunggu ditambah persediaan pengaman. |
@@ -221,32 +192,17 @@ Ringkasan dukungan bukti: (1→2) didukung sebagian; (2→3) bukti kasus terbata
 
 # 10. KESIMPULAN
 
-Sintesis delapan studi menunjukkan bahwa pengendalian persediaan dan peramalan permintaan merupakan jalur yang masuk akal untuk menekan *food waste* di UMKM kuliner. Bukti paling konkret berasal dari satu studi kasus dua toko roti, yang melaporkan penghematan biaya pengadaan sekitar 15–18% melalui EOQ serta menunjukkan bahwa tujuan meminimalkan waste tidak otomatis sejalan dengan tujuan memaksimalkan laba (Lipnik & Čepar, 2025). Studi peramalan menunjukkan bahwa model sederhana dapat memadai (Schmidt et al., 2022), dan tinjauan menempatkan faktor manajerial sebagai salah satu determinan waste (Santos Silva & Florêncio de Almeida, 2024).
+Sintesis delapan studi menunjukkan bahwa pengendalian persediaan dan peramalan permintaan adalah jalur yang masuk akal untuk menekan waste di UMKM kuliner. Bukti paling konkret berasal dari studi dua toko roti: penghematan biaya pengadaan sekitar 15–18% melalui EOQ, serta temuan bahwa meminimalkan waste tidak otomatis sejalan dengan memaksimalkan laba (Lipnik & Čepar, 2025). Model peramalan sederhana dapat memadai (Schmidt et al., 2022), dan tinjauan menempatkan faktor manajerial sebagai determinan waste (Santos Silva & Florêncio de Almeida, 2024).
 
-Beberapa batasan penting harus diingat. Hubungan dari peramalan hingga efisiensi operasional belum terbukti secara empiris pada seluruh mata rantainya. Banyak bukti bersifat asosiatif atau berbasis model. Tujuh dari delapan artikel hanya dianalisis dari abstrak. Konteks UMKM kuliner Indonesia belum terwakili dalam korpus terverifikasi.
-
-Bagi praktisi, implikasi yang paling dapat ditindaklanjuti adalah memulai dari pencatatan permintaan harian dan galat ramalan, kemudian menerapkan EOQ untuk bahan tahan lama dan Newsvendor untuk produk mudah rusak, sambil menimbang kapasitas penyimpanan dan kemampuan staf. Bagi peneliti, prioritasnya adalah studi lapangan multikasus yang mengukur volume waste secara langsung.
+Batasannya: rantai dari peramalan hingga efisiensi operasional belum terbukti empiris seluruhnya; banyak bukti bersifat asosiatif atau berbasis model; tujuh dari delapan artikel hanya dianalisis dari abstrak; konteks UMKM Indonesia belum terwakili. Bagi praktisi, langkah paling dapat ditindaklanjuti adalah mencatat permintaan harian dan galat ramalan, lalu menerapkan EOQ untuk bahan tahan lama dan Newsvendor untuk produk mudah rusak dengan mempertimbangkan gudang dan kemampuan staf. Bagi peneliti, prioritasnya studi lapangan multikasus yang mengukur volume waste langsung.
 
 # 11. DAFTAR PUSTAKA
 
 <!-- REFERENCES -->
 
-# LAMPIRAN A. LAPORAN SINGKAT KETERBATASAN SUMBER DAN PROSES VERIFIKASI
+# LAMPIRAN A. KETERBATASAN SUMBER DAN PROSES VERIFIKASI
 
-**Proses verifikasi.**
+**Verifikasi.** (1) Setiap DOI dicocokkan dengan Crossref (judul, penulis, tahun, jurnal, volume, halaman) oleh `scripts/verify_references.py`; hasil di `docs/verification_report.md`. (2) Abstrak dibaca dari Crossref, OpenAlex, atau Semantic Scholar. (3) Hanya Lipnik dan Čepar (2025) dibaca penuh; seluruh angka laporan (€1.951; 18,35%; €712,26; 128 kg; 55 roti) berasal dari teks itu. (4) Skrip yang sama memeriksa setiap referensi dikutip dan setiap sitasi punya entri. (5) Teks Inggris Bagian 8 dicocokkan kalimat demi kalimat dengan PDF sumber.
 
-1. *Pencocokan metadata.* Setiap DOI diperiksa terhadap Crossref (judul, penulis, tahun, jurnal, volume, halaman) menggunakan skrip `scripts/verify_references.py`; hasilnya disimpan pada `docs/verification_report.md`.
-2. *Verifikasi silang abstrak.* Abstrak dibaca dari Crossref, OpenAlex, atau Semantic Scholar; untuk Filimonau dan De Coteau (2019) abstrak dikonfirmasi melalui dua sumber (Semantic Scholar dan repositori Bournemouth University).
-3. *Teks lengkap.* Hanya Lipnik dan Čepar (2025) yang diunduh dan dibaca penuh; angka dalam laporan ini (€1.951; 18,35%; €712,26; 128 kg; 55 roti) berasal langsung dari teks tersebut.
-4. *Konsistensi sitasi.* Skrip yang sama memeriksa bahwa setiap referensi dikutip di badan laporan dan setiap sitasi memiliki entri pada daftar pustaka.
-5. *Verifikasi kutipan terjemahan.* Teks Inggris pada Bagian 8 dicocokkan kata demi kata terhadap teks PDF sumber, kecuali penghilangan yang dinyatakan.
+**Keterbatasan.** Tujuh dari delapan artikel hanya dianalisis dari abstrak; empat di antaranya (Filimonau & De Coteau, 2019; Chaudhary et al., 2018; Barto et al., 2024; Santos Silva & Florêncio de Almeida, 2024) tidak dapat diunduh karena pembatasan akses. Korpus kecil dan bukan tinjauan sistematis lengkap, tanpa penilaian kualitas formal (misalnya PRISMA, CASP). Google Scholar, Scopus, dan Web of Science tidak digunakan langsung. Nama penulis ketiga Fajriah et al. (2025) mengikuti metadata Crossref ("Hustina Rachman, P.").
 
-**Keterbatasan.**
-
-- Tujuh dari delapan artikel hanya dianalisis dari abstrak; temuan dan keterbatasannya tidak dapat melampaui isi abstrak.
-- Empat artikel (Filimonau & De Coteau, 2019; Chaudhary et al., 2018; Barto et al., 2024; Santos Silva & Florêncio de Almeida, 2024) tidak dapat diunduh teks lengkapnya dari lingkungan kerja karena pembatasan akses penerbit.
-- Jumlah korpus kecil (delapan) dan tidak dimaksudkan sebagai tinjauan sistematis lengkap; tidak ada penilaian kualitas formal (misalnya PRISMA atau CASP).
-- Pencarian dibatasi pada basis data yang dapat diakses secara terprogram; Google Scholar, Scopus, dan Web of Science tidak digunakan secara langsung.
-- Tanizaki et al. (2019) dan Fajriah et al. (2025) adalah makalah prosiding; mutu penelaahan sejawatnya tidak diverifikasi terpisah.
-- Nama penulis Fajriah et al. (2025) mengikuti pemisahan nama pada metadata Crossref; penulis ketiga tercatat sebagai "Hustina Rachman, P."
-- Pernyataan "tidak ada studi" atau "terbatas" pada Bagian 6 berlaku hanya untuk korpus delapan studi yang diverifikasi, bukan untuk seluruh literatur.

@@ -8,7 +8,7 @@ Memahami bagaimana pengendalian persediaan dan peramalan permintaan dapat memban
 
 ## Isi dan fitur
 
-- Laporan 13 halaman: ringkasan eksekutif, metodologi pencarian, literature matrix (8 studi, 10 kolom), sintesis tematik dan analisis komparatif, *research gap*, kerangka konseptual berbasis bukti, terjemahan teknis (±245 kata), glosarium 21 istilah, kesimpulan, daftar pustaka APA 7, dan laporan keterbatasan sumber.
+- Laporan 8 halaman: ringkasan eksekutif, metodologi pencarian, literature matrix (8 studi, 10 kolom), sintesis tematik dan analisis komparatif, *research gap*, kerangka konseptual berbasis bukti, terjemahan teknis (±245 kata), glosarium 20 istilah, kesimpulan, daftar pustaka APA 7, dan laporan keterbatasan sumber.
 - Seluruh sumber diverifikasi terhadap Crossref (judul, penulis, tahun, volume, halaman, DOI) oleh `scripts/verify_references.py`.
 - Kutipan Inggris pada terjemahan dicocokkan kalimat demi kalimat dengan PDF sumber (CC BY-SA 4.0).
 
@@ -27,7 +27,7 @@ Memahami bagaimana pengendalian persediaan dan peramalan permintaan dapat memban
 
 | Sampul | Literature matrix | Kerangka konseptual dan terjemahan |
 |---|---|---|
-| ![Sampul](docs/screenshots/halaman-01.png) | ![Matrix](docs/screenshots/halaman-04.png) | ![Kerangka](docs/screenshots/halaman-09.png) |
+| ![Sampul](docs/screenshots/halaman-01.png) | ![Matrix](docs/screenshots/halaman-03.png) | ![Kerangka](docs/screenshots/halaman-06.png) |
 
 ## Teknologi
 
@@ -58,7 +58,7 @@ Delapan artikel (Lipnik & Čepar, 2025; Santos Silva & Florêncio de Almeida, 20
 - Dua artikel relevan dikeluarkan karena abstraknya tidak dapat diverifikasi.
 - Korpus kecil dan bukan tinjauan sistematis lengkap; Google Scholar, Scopus, dan Web of Science tidak digunakan langsung.
 - Tidak ada studi UMKM kuliner Indonesia dalam korpus; ini keterbatasan pencarian, bukan bukti ketiadaan literatur.
-- Panjang laporan (13 halaman) melebihi target 5–8 halaman karena literature matrix landscape, glosarium, dan terjemahan dihitung dalam isi utama; badan analitis utama sekitar 8–9 halaman.
+- Untuk memenuhi batas 8 halaman, literature matrix pada laporan memakai teks ringkas; versi lengkap ada di CSV/XLSX. Laporan memakai font 10 pt dan matrix 6,5 pt, sehingga padat.
 
 ## Lisensi dan atribusi
 

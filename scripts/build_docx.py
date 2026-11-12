@@ -26,20 +26,18 @@ md = (ROOT / "report/laporan_sintesis_literatur.md").read_text(encoding="utf-8")
 
 cols = ["Penulis dan Tahun", "Judul Penelitian", "Tujuan Penelitian", "Metodologi", "Variabel atau Aspek yang Dikaji",
         "Temuan Utama", "Keterbatasan Penelitian", "Relevansi terhadap UMKM Kuliner", "DOI atau Link Sumber"]
-widths = [3, 11, 14, 14, 11, 20, 14, 14, 11]  # bobot relatif lebar kolom (setelah kolom No.)
+widths = [3, 11, 13, 13, 11, 22, 14, 13, 8]  # bobot relatif lebar kolom (setelah kolom No.)
 esc = lambda t: t.replace("|", "\\|")
 tbl = ["**Tabel 1.** Literature matrix", "", "| No. | " + " | ".join(cols) + " |",
        "|" + "-" * 3 + "|" + "|".join("-" * w for w in widths) + "|"]
 for i, r in enumerate(matrix, 1):
-    cells = [f"{r['Penulis dan Tahun']} [{r['Dasar Analisis'].lower()}]"] + [r[c] for c in cols[1:]]
+    cells = [f"{r['Penulis dan Tahun']} [{r['Dasar Analisis'].lower()}]", r["Judul Penelitian"]] + [r["ringkas"][c] if c in r["ringkas"] else r[c] for c in cols[2:]]
     cells[-1] = cells[-1].replace("https://doi.org/", "doi:")
     tbl.append(f"| {i} | " + " | ".join(esc(c) for c in cells) + " |")
 tbl_md = "\n".join(tbl)
 md = md.replace("<!-- MATRIX -->", '::: {custom-style="TableCaption"}\nTabel 1. Literature matrix (landscape)\n:::\n\n' + tbl_md.split("\n", 2)[2])
 ref_md = "\n\n".join('::: {custom-style="Reference"}\n' + r["apa"] + "\n:::" for r in sorted(refs, key=lambda x: x["apa"]))
 md = md.replace("<!-- REFERENCES -->", ref_md)
-md = md.replace("**Tabel 2.**", '::: {custom-style="TableCaption"}\nTabel 2.')
-md = re.sub(r"(Tabel 2\.) Perbandingan pendekatan metodologis dalam korpus", r"\1 Perbandingan pendekatan metodologis dalam korpus\n:::", md)
 md_path = BUILD / "laporan_gabungan.md"; md_path.write_text(md, encoding="utf-8")
 (ROOT / "report" / "figures").mkdir(exist_ok=True)
 
@@ -79,14 +77,14 @@ class _S:
     def add_style(self, *a, **k): return self.styles.add_style(*a, **k)
 S = _S(d.styles)
 for n in ("Normal", "Body Text", "First Paragraph", "Compact"):
-    setfont(S[n], 10.5)
+    setfont(S[n], 10)
 for n in ("Body Text", "First Paragraph"):
-    para(S[n], 0, 5, 1.08, WD_ALIGN_PARAGRAPH.JUSTIFY)
+    para(S[n], 0, 4, 1.04, WD_ALIGN_PARAGRAPH.JUSTIFY)
 para(S["Compact"], 0, 2, 1.1)
-setfont(S["Heading 1"], 14, True, False, NAVY); para(S["Heading 1"], 16, 8, 1.1, keep_next=True)
-setfont(S["Heading 2"], 12, True, False, NAVY); para(S["Heading 2"], 12, 4, 1.1, keep_next=True)
+setfont(S["Heading 1"], 13, True, False, NAVY); para(S["Heading 1"], 10, 4, 1.0, keep_next=True)
+setfont(S["Heading 2"], 11, True, False, NAVY); para(S["Heading 2"], 6, 2, 1.0, keep_next=True)
 setfont(S["Heading 3"], 11, True, True, NAVY); para(S["Heading 3"], 8, 3, 1.1, keep_next=True)
-setfont(S["Block Text"], 10.5); para(S["Block Text"], 2, 4, 1.1, WD_ALIGN_PARAGRAPH.JUSTIFY, left=0.8)
+setfont(S["Block Text"], 9.5); para(S["Block Text"], 2, 4, 1.1, WD_ALIGN_PARAGRAPH.JUSTIFY, left=0.8)
 setfont(S["Image Caption"], 9.5, False, True); para(S["Image Caption"], 2, 10, 1.0, WD_ALIGN_PARAGRAPH.CENTER)
 for nm in ("Captioned Figure", "Figure"):
     if nm in [x.name for x in S]: para(S[nm], 6, 2, 1.0, WD_ALIGN_PARAGRAPH.CENTER)
@@ -101,7 +99,7 @@ add("CoverSub", size=13, before=0, after=8, align=WD_ALIGN_PARAGRAPH.CENTER)
 add("CoverMeta", size=11, before=60, after=30, line=1.5, align=WD_ALIGN_PARAGRAPH.CENTER)
 add("CoverNote", size=9.5, italic=True, before=30, after=0, line=1.15, align=WD_ALIGN_PARAGRAPH.JUSTIFY, left=1.0)
 add("TableCaption", size=10, bold=True, before=6, after=4, line=1.0, keep_next=True)
-add("Reference", size=11, before=0, after=6, line=1.15, align=WD_ALIGN_PARAGRAPH.LEFT, left=1.0, hanging=1.0)
+add("Reference", size=9.5, before=0, after=3, line=1.05, align=WD_ALIGN_PARAGRAPH.LEFT, left=1.0, hanging=1.0)
 d.save(ref_docx)
 
 # ---------- 3. pandoc ----------
@@ -118,7 +116,7 @@ if rpr is not None: rpr.append(lang)
 
 sec = doc.sections[0]
 sec.page_width, sec.page_height = Cm(21), Cm(29.7)
-sec.left_margin = sec.right_margin = Cm(2.2); sec.top_margin = sec.bottom_margin = Cm(2.2)
+sec.left_margin = sec.right_margin = Cm(2.0); sec.top_margin = sec.bottom_margin = Cm(1.9)
 
 def set_cell_bg(cell, hexcolor):
     tcPr = cell._tc.get_or_add_tcPr(); sh = OxmlElement("w:shd")
@@ -150,7 +148,7 @@ for ti, t in enumerate(tables):
     ncols = len(t.columns)
     is_matrix = ncols == 10
     is_kv = ncols == 2
-    size = 7 if is_matrix else (10 if is_kv else 9.5)
+    size = 6.5 if is_matrix else (9 if is_kv else 8)
     for ri, row in enumerate(t.rows):
         no_split(row) if not is_matrix else None
         for c in row.cells:
@@ -179,8 +177,8 @@ def set_widths(t, ws):
         for c, wd in zip(row.cells, ws): c.width = Cm(wd)
 for t in tables:
     n = len(t.columns)
-    if n == 3: set_widths(t, [3.9, 3.9, 8.8])
-    elif n == 4: set_widths(t, [3.4, 4.8, 3.9, 4.5])
+    if n == 3: set_widths(t, [3.9, 3.9, 9.2])
+    elif n == 4: set_widths(t, [3.4, 5.4, 4.1, 4.2])
     elif n == 2: set_widths(t, [3.2, 13.4])
 # kolom tabel kv: 3.2 cm + sisa
 for t in tables:
@@ -193,7 +191,7 @@ for t in tables:
 
 # lebar kolom matrix (cm), total 24.6 untuk A4 lanskap dengan margin 2.54... gunakan margin 1.8 -> 26.1
 mw = [0.8, 2.0, 2.9, 2.8, 3.0, 2.4, 4.6, 2.9, 2.9, 2.5]
-scale = 26.1 / sum(mw)
+scale = 27.3 / sum(mw)
 for t in tables:
     if len(t.columns) == 10:
         grid = t._tbl.tblGrid
@@ -228,8 +226,8 @@ def sect_para(orient, titlepg=False):
     pg = sp.find(qn("w:pgSz")); mar = sp.find(qn("w:pgMar"))
     if orient == "land":
         pg.set(qn("w:w"), "16838"); pg.set(qn("w:h"), "11906"); pg.set(qn("w:orient"), "landscape")
-        for k in ("top", "bottom"): mar.set(qn(f"w:{k}"), "1134")
-        for k in ("left", "right"): mar.set(qn(f"w:{k}"), "1021")
+        for k in ("top", "bottom"): mar.set(qn(f"w:{k}"), "850")
+        for k in ("left", "right"): mar.set(qn(f"w:{k}"), "850")
     else:
         pg.set(qn("w:w"), "11906"); pg.set(qn("w:h"), "16838")
         if pg.get(qn("w:orient")): del pg.attrib[qn("w:orient")]
@@ -239,7 +237,7 @@ def sect_para(orient, titlepg=False):
 # pgSz/pgMar pada final harus portrait + margin tepat
 fp_ = final.find(qn("w:pgSz")); fp_.set(qn("w:w"), "11906"); fp_.set(qn("w:h"), "16838")
 fm = final.find(qn("w:pgMar"))
-for k in ("top", "bottom", "left", "right"): fm.set(qn(f"w:{k}"), "1247")
+for k in ("top", "bottom", "left", "right"): fm.set(qn(f"w:{k}"), "1134")
 for k in ("header", "footer"): fm.set(qn(f"w:{k}"), "708")
 h4._p.addprevious(sect_para("port", titlepg=True))
 h5._p.addprevious(sect_para("land"))
