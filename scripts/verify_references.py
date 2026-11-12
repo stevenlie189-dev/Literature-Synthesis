@@ -55,6 +55,8 @@ for mt in pat.finditer(main):
     nm = re.sub(r"^(Hanya|Sedangkan|Pada|Studi|Model)\s+", "", mt.group(1))
     cited[(nm, mt.group(2))] = cited.get((nm, mt.group(2)), 0) + 1
 known = {(r["first_author"], str(r["year"])) for r in refs}
+# nama rekan penulis (dari string sitasi) juga diterima, mis. 'Lipnik dan Čepar (2025)'
+known |= {(nm.strip(), str(r["year"])) for r in refs for nm in re.split(r" & | et al\.,? ?|, \d{4}", r["cite"]) if nm.strip() and not nm.strip().isdigit()}
 STOP = {"Hanya", "November"}
 unknown = sorted(k for k in cited if k[0] not in STOP and k[0].split()[-1] not in STOP and not any(k[1] == y and (k[0].startswith(a) or a.startswith(k[0])) for a, y in known))
 unused = sorted(r["key"] for r in refs if (r["first_author"] not in main) or str(r["year"]) not in main)

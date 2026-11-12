@@ -10,7 +10,16 @@
     "Keterbatasan Penelitian": "Hanya dua kasus; EOQ mengandaikan permintaan stabil (persediaan pengaman tidak dimasukkan); perhitungan Newsvendor diilustrasikan pada satu hari terpilih; perhitungan manual sulit bagi pemilik usaha kecil (dinyatakan penulis).",
     "Relevansi terhadap UMKM Kuliner": "Sangat tinggi: skala usaha kecil, bahan baku mudah rusak, dan bukti kuantitatif yang langsung menghubungkan pengendalian persediaan dengan biaya dan waste.",
     "DOI atau Link Sumber": "https://doi.org/10.26493/1854-6935.23.259-294",
-    "Dasar Analisis": "Teks lengkap"
+    "Dasar Analisis": "Teks lengkap",
+    "ringkas": {
+      "Judul Penelitian": "Reducing food waste and boosting profits through inventory management: Small Slovenian bakeries",
+      "Tujuan Penelitian": "Menilai peran persediaan dalam menekan waste dan memperbaiki kinerja ekonomi; uji H1 (biaya >15% turun) dan H2.",
+      "Metodologi": "Studi 2 kasus; wawancara dan dokumen; EOQ (bahan baku) dan Newsvendor (produksi harian).",
+      "Variabel atau Aspek yang Dikaji": "Biaya pesan/simpan, umur simpan, permintaan harian, rasio kritis.",
+      "Temuan Utama": "EOQ menghemat €1.951 (18,35%) pada tepung dan €712,26 (±15%) pada bahan lain; ragi dibatasi 128 kg. Kuantitas pemaksimal laba ≠ peminimal waste. Permintaan tidak dicatat sistematis.",
+      "Keterbatasan Penelitian": "Hanya dua kasus; EOQ mengandaikan permintaan stabil; Newsvendor diilustrasikan pada satu hari; hitungan manual sulit.",
+      "Relevansi terhadap UMKM Kuliner": "Sangat tinggi: skala kecil, bahan mudah rusak, bukti biaya dan waste."
+    }
   },
   {
     "ref": "santos2024",
@@ -23,7 +32,16 @@
     "Keterbatasan Penelitian": "Terbatas pada artikel yang terindeks Scopus dan Web of Science. Karena hanya abstrak yang diverifikasi, keterbatasan lain yang dinyatakan penulis tidak dapat dinilai.",
     "Relevansi terhadap UMKM Kuliner": "Sedang-tinggi: menempatkan praktik manajemen sebagai salah satu determinan waste; tidak khusus membahas persediaan maupun UMKM (berdasarkan abstrak).",
     "DOI atau Link Sumber": "https://doi.org/10.18461/ijfsd.v15i4.l1",
-    "Dasar Analisis": "Abstrak"
+    "Dasar Analisis": "Abstrak",
+    "ringkas": {
+      "Judul Penelitian": "Determinants and effects of food waste in restaurants: A systematic literature review",
+      "Tujuan Penelitian": "Mengorganisasi determinan dan dampak food loss and waste restoran.",
+      "Metodologi": "Tinjauan sistematis 80 artikel (Scopus, Web of Science).",
+      "Variabel atau Aspek yang Dikaji": "Perilaku konsumen, manajemen restoran, kebijakan publik; dampak.",
+      "Temuan Utama": "Waste ditentukan perilaku konsumen, manajemen, dan kebijakan; berdampak ekonomi dan lingkungan; pelatihan staf ditekankan.",
+      "Keterbatasan Penelitian": "Terbatas pada Scopus/WoS; keterbatasan lain tak dapat dinilai (abstrak).",
+      "Relevansi terhadap UMKM Kuliner": "Sedang-tinggi: manajemen sebagai determinan; tidak khusus persediaan/UMKM."
+    }
   },
   {
     "ref": "filimonau2019",
@@ -36,7 +54,16 @@
     "Keterbatasan Penelitian": "Bersifat tinjauan konseptual tanpa data primer; berfokus pada sektor hospitality secara umum. Keterbatasan lain tidak dapat dinilai karena hanya abstrak yang diverifikasi.",
     "Relevansi terhadap UMKM Kuliner": "Sedang-tinggi: faktor biaya investasi dan kompetensi staf sangat menentukan kelayakan adopsi pada usaha kecil.",
     "DOI atau Link Sumber": "https://doi.org/10.1016/j.tourman.2018.10.009",
-    "Dasar Analisis": "Abstrak"
+    "Dasar Analisis": "Abstrak",
+    "ringkas": {
+      "Judul Penelitian": "Food waste management in hospitality operations: A critical review",
+      "Tujuan Penelitian": "Telaah kritis food waste hospitality dari sudut pandang manajer dan penyusunan kerangka pengelolaan.",
+      "Metodologi": "Tinjauan kritis literatur dan contoh praktik baik.",
+      "Variabel atau Aspek yang Dikaji": "Pengukuran waste; kompetensi, pelatihan, investasi, penghematan.",
+      "Temuan Utama": "Topik kurang diteliti dari sisi manajemen operasi; kerangka bertumpu pada kompetensi, pelatihan, investasi awal, penghematan.",
+      "Keterbatasan Penelitian": "Konseptual, tanpa data primer; keterbatasan lain tak dapat dinilai (abstrak).",
+      "Relevansi terhadap UMKM Kuliner": "Sedang-tinggi: biaya investasi dan kompetensi menentukan adopsi."
+    }
   },
   {
     "ref": "schmidt2022",
@@ -49,7 +76,16 @@
     "Keterbatasan Penelitian": "Satu restoran menengah; tujuan penelitian adalah penjadwalan tenaga kerja, bukan persediaan atau waste; galat masih mendekati 20%.",
     "Relevansi terhadap UMKM Kuliner": "Sedang: menunjukkan model sederhana dapat memadai untuk peramalan harian, tetapi dampaknya terhadap waste tidak diuji.",
     "DOI atau Link Sumber": "https://doi.org/10.3390/make4010006",
-    "Dasar Analisis": "Abstrak"
+    "Dasar Analisis": "Abstrak",
+    "ringkas": {
+      "Judul Penelitian": "Machine learning based restaurant sales forecasting",
+      "Tujuan Penelitian": "Membandingkan model ML untuk peramalan penjualan guna penjadwalan karyawan.",
+      "Metodologi": "Data riil satu restoran menengah; model linear, ensemble, RNN; horizon 1 hari dan 1 minggu.",
+      "Variabel atau Aspek yang Dikaji": "Akurasi (sMAPE), fitur, tren dan musiman.",
+      "Temuan Utama": "1 hari: linear sMAPE 19,6%, LSTM/TFT/ensemble <20%. 1 minggu: non-RNN >20%, RNN terbaik 19,5%.",
+      "Keterbatasan Penelitian": "Satu restoran; tujuan penjadwalan SDM, bukan persediaan; galat ≈20%.",
+      "Relevansi terhadap UMKM Kuliner": "Sedang: model sederhana kompetitif; dampak pada waste tak diuji."
+    }
   },
   {
     "ref": "tanizaki2019",
@@ -62,7 +98,16 @@
     "Keterbatasan Penelitian": "Model spesifik-toko (generalisasi terbatas); angka akurasi tidak dapat diverifikasi dari abstrak; makalah prosiding singkat (hlm. 679–683).",
     "Relevansi terhadap UMKM Kuliner": "Sedang: menegaskan pentingnya data penjualan dan faktor eksternal; ketersediaan data POS pada UMKM menjadi prasyarat.",
     "DOI atau Link Sumber": "https://doi.org/10.1016/j.procir.2019.02.042",
-    "Dasar Analisis": "Abstrak"
+    "Dasar Analisis": "Abstrak",
+    "ringkas": {
+      "Judul Penelitian": "Demand forecasting in restaurants using machine learning and statistical analysis",
+      "Tujuan Penelitian": "Membangun model peramalan spesifik-toko dari data POS dan faktor eksternal.",
+      "Metodologi": "Model ML; data POS, lokasi, cuaca, acara; verifikasi data toko nyata.",
+      "Variabel atau Aspek yang Dikaji": "Data POS, lokasi, cuaca, acara.",
+      "Temuan Utama": "Peramalan toko nyata butuh model spesifik-toko; angka hasil tidak ada di abstrak.",
+      "Keterbatasan Penelitian": "Spesifik-toko; akurasi tak dapat diverifikasi; makalah prosiding singkat.",
+      "Relevansi terhadap UMKM Kuliner": "Sedang: data POS prasyarat bagi UMKM."
+    }
   },
   {
     "ref": "chaudhary2018",
@@ -75,7 +120,16 @@
     "Keterbatasan Penelitian": "Cakupan literatur 1990–2016; berorientasi model, bukan bukti implementasi pada usaha kecil.",
     "Relevansi terhadap UMKM Kuliner": "Tinggi sebagai landasan konsep: menu kuliner memakai banyak bahan mudah rusak sekaligus, padahal model multi-item masih terbatas.",
     "DOI atau Link Sumber": "https://doi.org/10.1108/JAMR-09-2017-0091",
-    "Dasar Analisis": "Abstrak"
+    "Dasar Analisis": "Abstrak",
+    "ringkas": {
+      "Judul Penelitian": "State-of-the-art literature review on inventory models for perishable products",
+      "Tujuan Penelitian": "Menelaah model persediaan mudah rusak: evolusi, cakupan, kebijakan, celah riset.",
+      "Metodologi": "Tinjauan 418 artikel (1990–2016).",
+      "Variabel atau Aspek yang Dikaji": "Laju rusak, permintaan, diskon, shortage, inflasi, multi-item/echelon.",
+      "Temuan Utama": "Faktor tambahan makin banyak dimodelkan; model multi-item masih terbatas; multi-echelon dengan berbagi informasi penting.",
+      "Keterbatasan Penelitian": "Cakupan 1990–2016; berorientasi model, bukan implementasi usaha kecil.",
+      "Relevansi terhadap UMKM Kuliner": "Tinggi sebagai landasan: menu memakai banyak bahan mudah rusak."
+    }
   },
   {
     "ref": "barto2024",
@@ -88,7 +142,16 @@
     "Keterbatasan Penelitian": "Berbasis model dan simulasi numerik, bukan data lapangan; konteks ritel dan bukan kuliner; waste yang dikaji terbatas pada tingkat pengecer.",
     "Relevansi terhadap UMKM Kuliner": "Rendah-sedang: memperlihatkan bahwa desain kebijakan persediaan memengaruhi waste, tetapi skala dan konteksnya berbeda dari UMKM.",
     "DOI atau Link Sumber": "https://doi.org/10.1016/j.omega.2024.103131",
-    "Dasar Analisis": "Abstrak"
+    "Dasar Analisis": "Abstrak",
+    "ringkas": {
+      "Judul Penelitian": "Reduced food waste through inventory control despite throwing out food before expiration",
+      "Tujuan Penelitian": "Menilai apakah ritel daring menghasilkan waste lebih banyak daripada luring.",
+      "Metodologi": "Diskusi teoretis dan eksperimen numerik (base-stock).",
+      "Variabel atau Aspek yang Dikaji": "Kebijakan persediaan, pembuangan dini, pooling, order picking.",
+      "Temuan Utama": "Ritel daring menghasilkan waste lebih sedikit untuk banyak produk, berkat pooling dan kendali order picking.",
+      "Keterbatasan Penelitian": "Model numerik, bukan data lapangan; ritel, bukan kuliner.",
+      "Relevansi terhadap UMKM Kuliner": "Rendah-sedang: kebijakan persediaan memengaruhi waste; skala berbeda."
+    }
   },
   {
     "ref": "fajriah2025",
@@ -101,6 +164,15 @@
     "Keterbatasan Penelitian": "Tinjauan naratif (tidak sistematis); makalah prosiding konferensi; jumlah dan kriteria seleksi artikel tidak dapat diverifikasi dari abstrak.",
     "Relevansi terhadap UMKM Kuliner": "Sedang-tinggi: berfokus pada restoran di Asia dan menyebut manajemen pasokan sebagai faktor kunci.",
     "DOI atau Link Sumber": "https://doi.org/10.1051/bioconf/202515304006",
-    "Dasar Analisis": "Abstrak"
+    "Dasar Analisis": "Abstrak",
+    "ringkas": {
+      "Judul Penelitian": "Restaurant food waste management strategy in Asia using the RFWM approach",
+      "Tujuan Penelitian": "Menghimpun informasi pengelolaan waste restoran dengan Restaurant Food Waste Map.",
+      "Metodologi": "Tinjauan naratif.",
+      "Variabel atau Aspek yang Dikaji": "Penghasil waste, jenis waste, manajemen pasokan, penyajian, perilaku pelanggan.",
+      "Temuan Utama": "Waste sebagian besar dapat dihindari; faktor: manajemen pasokan, penyajian, perilaku pelanggan; strategi: perbaiki pasokan, piring kecil, edukasi.",
+      "Keterbatasan Penelitian": "Tinjauan naratif; prosiding; seleksi artikel tak terverifikasi.",
+      "Relevansi terhadap UMKM Kuliner": "Sedang-tinggi: restoran Asia; manajemen pasokan faktor kunci."
+    }
   }
 ]

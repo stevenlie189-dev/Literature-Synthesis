@@ -17,14 +17,14 @@ Dihasilkan oleh `scripts/verify_references.py`. Setiap DOI dibandingkan dengan m
 
 - Referensi yang tidak dikutip di teks: tidak ada
 - Sitasi (penulis, tahun) tanpa entri referensi: tidak ada
-- Lipnik & Čepar, 2025: nama muncul 27x di teks
+- Lipnik & Čepar, 2025: nama muncul 22x di teks
 - Santos Silva & Florêncio de Almeida, 2024: nama muncul 10x di teks
 - Filimonau & De Coteau, 2019: nama muncul 4x di teks
 - Schmidt et al., 2022: nama muncul 8x di teks
-- Tanizaki et al., 2019: nama muncul 9x di teks
+- Tanizaki et al., 2019: nama muncul 8x di teks
 - Chaudhary et al., 2018: nama muncul 9x di teks
 - Barto et al., 2024: nama muncul 7x di teks
-- Fajriah et al., 2025: nama muncul 9x di teks
+- Fajriah et al., 2025: nama muncul 8x di teks
 
 ## Kecocokan kutipan Inggris dengan teks PDF sumber
 
