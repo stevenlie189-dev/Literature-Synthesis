@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+# Secrets / environment (proyek ini tidak membutuhkan API key)
+.env
+*.key
+*.pem
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Lock & temp office files
+~$*
+*.tmp
+.~lock.*
+build/
