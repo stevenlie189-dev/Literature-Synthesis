@@ -59,7 +59,6 @@ Delapan artikel (Lipnik & Čepar, 2025; Santos Silva & Florêncio de Almeida, 20
 - Korpus kecil dan bukan tinjauan sistematis lengkap; Google Scholar, Scopus, dan Web of Science tidak digunakan langsung.
 - Tidak ada studi UMKM kuliner Indonesia dalam korpus; ini keterbatasan pencarian, bukan bukti ketiadaan literatur.
 - Panjang laporan (13 halaman) melebihi target 5–8 halaman karena literature matrix landscape, glosarium, dan terjemahan dihitung dalam isi utama; badan analitis utama sekitar 8–9 halaman.
-- Nama penulis pada sampul masih berupa placeholder `[Nama Penulis]`.
 
 ## Lisensi dan atribusi
 

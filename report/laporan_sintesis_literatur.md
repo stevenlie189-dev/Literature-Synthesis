@@ -17,7 +17,7 @@ Sintesis Literatur Akademik dan Sampel Terjemahan Teknis Inggris–Indonesia
 ::: {custom-style="CoverMeta"}
 Bidang: Teknik Industri · Manajemen Operasi · Manajemen Rantai Pasok\
 Jenis dokumen: Literature Synthesis, Comparative Analysis, Technical Translation, Technical Glossary\
-Disusun oleh: [Nama Penulis]\
+Disusun oleh: Steven\
 Tanggal: 12 November 2026
 :::
 
